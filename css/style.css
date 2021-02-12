@@ -38,6 +38,7 @@ p {
   max-width: 1440px;
   margin: 0 auto;
   padding: 36px 16px;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,6 +68,22 @@ p {
 
 .container-item-2 {
   border: 1px solid green;
+}
+
+.spiderman {
+  width: 150%;
+  -webkit-transform: translate3d(-170px, 0, 0);
+          transform: translate3d(-170px, 0, 0);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 3px;
+  -webkit-transform: skewX(-10deg);
+          transform: skewX(-10deg);
+  text-transform: uppercase;
+  background: linear-gradient(225deg, #EA1D22 0%, #B31317 100%);
 }
 
 header {
