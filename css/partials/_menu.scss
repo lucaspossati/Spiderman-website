@@ -15,12 +15,14 @@ header{
 .nav-menu{
     display: flex;
     justify-content: flex-start;
-    align-items: center;  
+    align-items: center; 
+    
 }
 
 .nav-list{
     list-style: none;
     display: flex;
+   
      
 
     li{
@@ -28,9 +30,34 @@ header{
     }
 
     @include responsive(){
-        display: none;
+        position: fixed;
+        top: 0;
+        right: -100%;
+
+        background-color: black;
+        opacity: 0.5;
+        margin: 0;
+        height: 100vh;
+
+        width: 100%;
+        max-width: 250px;
+
+        padding: 100px 20px;
+        
+        flex-direction: column;
+
+        transition: 0.5s ease;
+        z-index: 2;
+
+        &.active{
+            right: 0;
+        }
+        
     }
 }
+
+
+
 
 .logo{
     max-width: 88px;
@@ -84,13 +111,72 @@ header{
     
 
     @include responsive(){
-        display: block;
         width: 48px;
         height: 48px;
+       
 
-        background-color: white;
-        border-radius: 8px;
+        z-index: 2;
+        border-radius: 10%;
+
+        position: relative;
+
+        &::after{
+            content: '';
+
+            position: absolute;
+            top: 30%;
+            left: 15%;
+    
+            width: 70%;
+            height: 10%;
+
+            border-radius: 20px;
+            
+    
+            background-color: white;
+
+            transition: 1s ease;
+        }
+
+        &::before{
+            content: '';
+
+            position: absolute;
+            top: 60%;
+            left: 45%;
+    
+            width: 40%;
+            height: 10%;
+
+            border-radius: 20px;
+            
+    
+            background-color: white;
+
+            transition: 1s ease;
+        }
+
+
     }
+
+}
+
+
+#bx:checked ~ label .bx:after{
+    transform: rotate(225deg);
+
+    top: 45%;
+    left: 15%;
+}
+
+#bx:checked ~ label .bx:before{
+    transform: rotate(-405deg);
+
+    top: 45%;
+    left: 15%;
+
+    width: 70%;
+    height: 10%;
 }
 
 
